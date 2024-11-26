@@ -143,39 +143,10 @@ The error stops after the next block due to the feedback mechanism being reset w
 The 8th byte's corruption affects only the corresponding plaintext block.
 Subsequent blocks remain unaffected because the keystream is independent of the ciphertext.
 
-# Task 2. Encryption Mode – ECB vs. CBC
-This lab compares the behaviour of ECB and CBC encryption modes
-**Question 1**: Exploration of various ECB & CBC  with openssl
+# Task 2. Public-key based authentication 
+
+**Question 1**: 
+Implement public-key based authentication step-by-step with openssl according the following scheme.
+
 **Answer 1**:
-## 1. Download the bitmap file `origin.bmp`.
 
-
-## 2. Split the file into header and body:
-
-```sh
-dd if=origin.bmp of=header.bin bs=1 count=54
-dd if=origin.bmp of=body.bin bs=1 skip=54
-```
-
-<img width="500" alt="Screenshot" src="https://github.com/AlexanderSlokov/Security-Labs-Submission/blob/main/asset/encryptingLargeMessage7.png?raw=true"><br>
-
-
-## 3. Encrypt the body using CBC mode:
-
-<span>*I reused the KEY and IV values from the first task, just to make sure the consistency.*</span><br>
-
-```sh
-openssl enc -aes-256-cbc -nosalt -in body.bin -out encrypted_body.bin -K 00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF -iv 0102030405060708090A0B0C0D0E0F10
-```
-
-<span>*After using the `cat` command to look at the `encrypted_body.bin`, we can see it was fully encrypted.*</span><br>
-
-<img width="500" alt="Screenshot" src="https://github.com/AlexanderSlokov/Security-Labs-Submission/blob/main/asset/encryptingLargeMessage8.png?raw=true"><br>
-
-## 4. Combine the header and encrypted body:
-
-```sh
-cat header.bin encrypted_body.bin > partially_encrypted.bmp
-```
-
-<img width="500" alt="Screenshot" src="https://github.com/AlexanderSlokov/Security-Labs-Submission/blob/main/asset/encryptingLargeMessage9.png?raw=true"><br>
