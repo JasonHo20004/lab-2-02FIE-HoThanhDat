@@ -33,7 +33,7 @@ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 ```sh
 openssl enc -aes-256-ofb -in file.txt -out encrypted_ofb.txt -K e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 -iv 0123456789abcdef0123456789abcdef
 ```
-![alt text](Screenshot%202024-11-26%20090112.png)
+<img width="500" alt="Screenshot" src="https://github.com/AlexanderSlokov/Security-Labs-Submission/blob/main/asset/encryptingLargeMessage9.png?raw=true"><br>Screenshot%202024-11-26%20090112.png
 
 *Use the PowerShell built-in function Format-Hex to see the content file*<br>
 
