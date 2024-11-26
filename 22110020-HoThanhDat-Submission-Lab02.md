@@ -140,7 +140,7 @@ The error stops after the next block due to the feedback mechanism being reset w
 The 8th byte's corruption affects only the corresponding plaintext block.
 Subsequent blocks remain unaffected because the keystream is independent of the ciphertext.
 
-# Task 2. Public-key based authentication 
+# Task 1. Public-key based authentication 
 
 **Question 1**: 
 Implement public-key based authentication step-by-step with openssl according the following scheme.
