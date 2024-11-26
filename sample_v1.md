@@ -1,6 +1,5 @@
 # Lab #2,22110020, Ho Thanh Dat, INSE331280E_02FIE
-# Task 1: Public-key based authentication
-This lab implements public-key based authentication step-by-step with openssl
+# Task 2: Encrypting large message
 
 ![alt text](image-1.png)
 
