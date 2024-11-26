@@ -33,14 +33,14 @@ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 ```sh
 openssl enc -aes-256-ofb -in file.txt -out encrypted_ofb.txt -K e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 -iv 0123456789abcdef0123456789abcdef
 ```
-<img width="500" alt="Screenshot" src="https://github.com/AlexanderSlokov/Security-Labs-Submission/blob/main/asset/encryptingLargeMessage9.png?raw=true"><br>Screenshot%202024-11-26%20090112.png
+<img width="500" alt="Screenshot" src="https://github.com/JasonHo20004/lab-2-02FIE-HoThanhDat/blob/main/asset/Screenshot%202024-11-26%20090112.png"><br>
 
 *Use the PowerShell built-in function Format-Hex to see the content file*<br>
 
 ```sh
 $ Format-Hex '.\your-file-name'
 ```
-![alt text](/encrypted_content.png)
+<img width="500" alt="Screenshot" src="https://github.com/JasonHo20004/lab-2-02FIE-HoThanhDat/blob/main/asset/encrypted_content.png"><br>
 
 Cyphertext can clearly be seen in the screenshot.
 
@@ -58,10 +58,9 @@ openssl enc -aes-256-ofb -d -in encrypted_ofb.txt -out decrypted_ofb.txt -K e3b0
 ```
 *The two below image show that the decrypted files (decrypted_cfb.txt and decrypted_ofb.txt) match the original file.txt.*<br>
 
-![alt text](decrypted_cfb.png)
+<img width="500" alt="Screenshot" src="https://github.com/JasonHo20004/lab-2-02FIE-HoThanhDat/blob/main/asset/decrypted_cfb.png"><br>
 
-![alt text](decrypted_ofb.png)
-
+<img width="500" alt="Screenshot" src="https://github.com/JasonHo20004/lab-2-02FIE-HoThanhDat/blob/main/asset/decrypted_ofb.png"><br>
 
 The origin content can be seen after decryption in the screenshot.
 
@@ -69,7 +68,7 @@ The origin content can be seen after decryption in the screenshot.
 
 *The image below compare the two encryption modes:*<br>
 
-![alt text](cfb-ofb-compare.png)
+<img width="500" alt="Screenshot" src="https://github.com/JasonHo20004/lab-2-02FIE-HoThanhDat/blob/main/asset/cfb-ofb-compare.png"><br>
 
 ### 1. Error Propagation:
 CFB: Errors in the ciphertext can propagate to multiple plaintext blocks. This is because the decryption process depends on the previous ciphertext blocks.
@@ -106,12 +105,11 @@ def modify_byte(file_path, byte_index, new_byte_value):
 ```sh
 $ Format-Hex '.\your-file-name'
 ```
+<img width="500" alt="Screenshot" src="https://github.com/JasonHo20004/lab-2-02FIE-HoThanhDat/blob/main/asset/modified_encrypted.png"><br>
 
-![alt text](modified_encrypted.png)
+<img width="500" alt="Screenshot" src="https://github.com/JasonHo20004/lab-2-02FIE-HoThanhDat/blob/main/asset/encrypted_content.png"><br>
 
-![alt text](encrypted_content.png)
-
-As you can see, the 8th byte had been modified from B2 to FF in the image given
+As you can see, the 8th byte had been modified from B2 to FF in the images given
 
 ## Step 3: Decrypt the corrupted files
 
@@ -127,8 +125,7 @@ Decrypt the corrupted OFB file:
 ```sh
 openssl enc -aes-256-ofb -d -in encrypted_ofb.txt -out corrupted_decrypted_ofb.txt -K e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 -iv 0123456789abcdef0123456789abcdef
 ```
-
-![alt text](corrupted_modified_compare.png)
+<img width="500" alt="Screenshot" src="https://github.com/JasonHo20004/lab-2-02FIE-HoThanhDat/blob/main/asset/corrupted_modified_compare.png"><br>
 
 As you can see from the image, it has been modified a bit compared to origin message which is
 
